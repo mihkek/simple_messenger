@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class ApiAuthService extends AbsBaseApiService implements IAuthService
 {
-    public $test = '10 test';
     public function signin($email, $password): JsonResponse
     {
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
@@ -50,9 +49,5 @@ class ApiAuthService extends AbsBaseApiService implements IAuthService
     public function checkUserHasRole(UserRoleEnum $role, int $user_id): bool
     {
         return User::where('role', $role)->where('id', $user_id)->exists();
-    }
-    public function test()
-    {
-        return "Test 2";
     }
 }

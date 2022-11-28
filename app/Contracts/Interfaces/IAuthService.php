@@ -10,5 +10,4 @@ interface IAuthService
     public function signin($email, $password): JsonResponse;
     public function signup($input): JsonResponse;
     public function checkUserHasRole(UserRoleEnum $role, int $user_id): bool;
-    public function test();
 }
